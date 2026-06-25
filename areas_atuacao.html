@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Áreas de Atuação · SENAI Itumbiara</title>
+<style>
+  :root{
+    --azul-900:#0b2d4f;
+    --azul-700:#0f3f6e;
+    --azul-600:#13518c;
+    --azul-400:#2f7dc4;
+    --azul-100:#e7f1fb;
+    --azul-050:#f4f9fd;
+    --branco:#ffffff;
+    --cinza-700:#445566;
+    --cinza-400:#7c8a99;
+    --linha:#dde7f0;
+    --sombra: 0 2px 10px rgba(11,45,79,0.07);
+    --sombra-lg: 0 12px 28px rgba(11,45,79,0.14);
+    --radius:14px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--azul-050);
+    color:var(--cinza-700);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* ===== HEADER ===== */
+  header{
+    background:linear-gradient(120deg,var(--azul-900) 0%, var(--azul-700) 55%, var(--azul-600) 100%);
+    color:#fff;
+    padding:28px 32px 26px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    right:-60px; top:-80px;
+    width:280px;height:280px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.06);
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    right:120px; bottom:-120px;
+    width:220px;height:220px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.05);
+  }
+  .header-inner{
+    max-width:1280px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px; position:relative; z-index:2; flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand-logo{
+    width:46px;height:46px;border-radius:10px;
+    background:#fff;display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:var(--azul-700);font-size:14px;letter-spacing:0.5px;
+    flex-shrink:0;
+  }
+  .brand-text h1{margin:0;font-size:22px;font-weight:700;letter-spacing:.2px;}
+  .brand-text p{margin:2px 0 0;font-size:13px;color:#cfe1f3;font-weight:400;}
+  .header-meta{
+    display:flex;gap:10px;flex-wrap:wrap;
+  }
+  .pill{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    color:#fff;
+    padding:7px 14px;border-radius:30px;
+    font-size:12.5px; font-weight:600; letter-spacing:.3px;
+    white-space:nowrap;
+  }
+
+  /* ===== SEARCH BAR (sticky) ===== */
+  .toolbar{
+    position:sticky;top:0;z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--linha);
+    box-shadow:var(--sombra);
+  }
+  .toolbar-inner{
+    max-width:1280px;margin:0 auto;
+    padding:14px 32px;
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  }
+  .search-box{
+    flex:1 1 280px;
+    position:relative;
+    min-width:220px;
+  }
+  .search-box input{
+    width:100%;
+    padding:11px 16px 11px 40px;
+    border:1.5px solid var(--linha);
+    border-radius:10px;
+    font-size:14.5px;
+    background:var(--azul-050);
+    color:var(--azul-900);
+    transition:border-color .15s, background .15s;
+  }
+  .search-box input:focus{
+    outline:none;
+    border-color:var(--azul-400);
+    background:#fff;
+  }
+  .search-box svg{
+    position:absolute;left:13px;top:50%;transform:translateY(-50%);
+    width:16px;height:16px;color:var(--cinza-400);
+  }
+  .nav-pills{
+    display:flex;gap:6px;flex-wrap:wrap;
+  }
+  .nav-pill{
+    border:1.5px solid var(--linha);
+    background:#fff;
+    color:var(--azul-700);
+    padding:8px 13px;
+    border-radius:8px;
+    font-size:12.5px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .15s;
+    white-space:nowrap;
+  }
+  .nav-pill:hover{border-color:var(--azul-400); background:var(--azul-100);}
+  .nav-pill.active{background:var(--azul-700);border-color:var(--azul-700);color:#fff;}
+
+  /* ===== MAIN LAYOUT ===== */
+  main{max-width:1280px;margin:0 auto;padding:30px 32px 60px;}
+
+  .intro{
+    background:var(--branco);
+    border:1px solid var(--linha);
+    border-radius:var(--radius);
+    padding:20px 24px;
+    margin-bottom:28px;
+    display:flex;gap:18px;align-items:flex-start;
+    box-shadow:var(--sombra);
+  }
+  .intro-icon{
+    width:40px;height:40px;border-radius:10px;
+    background:var(--azul-100);color:var(--azul-700);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .intro h2{margin:0 0 4px;font-size:16px;color:var(--azul-900);}
+  .intro p{margin:0;font-size:13.5px;line-height:1.55;color:var(--cinza-700);}
+
+  /* grid overview cards */
+  .overview-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:14px;
+    margin-bottom:42px;
+  }
+  .overview-card{
+    background:#fff;
+    border:1.5px solid var(--linha);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+    cursor:pointer;
+    transition:transform .15s, box-shadow .15s, border-color .15s;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    text-align:left;
+  }
+  .overview-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-lg);
+    border-color:var(--azul-400);
+  }
+  .oc-top{display:flex;align-items:center;justify-content:space-between;}
+  .oc-icon{
+    width:38px;height:38px;border-radius:9px;
+    background:var(--azul-700);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:17px;
+  }
+  .oc-num{font-size:11.5px;color:var(--cinza-400);font-weight:700;}
+  .overview-card h3{margin:0;font-size:15px;color:var(--azul-900);}
+  .overview-card p{margin:0;font-size:12.5px;color:var(--cinza-400);line-height:1.4;}
+
+  /* ===== SECTIONS ===== */
+  .section{
+    background:#fff;
+    border:1px solid var(--linha);
+    border-radius:18px;
+    margin-bottom:22px;
+    overflow:hidden;
+    box-shadow:var(--sombra);
+    scroll-margin-top:90px;
+  }
+  .section-head{
+    display:flex;align-items:center;gap:16px;
+    padding:22px 26px;
+    cursor:pointer;
+    user-select:none;
+    border-bottom:1px solid transparent;
+    transition:background .15s;
+  }
+  .section-head:hover{background:var(--azul-050);}
+  .sh-icon{
+    width:48px;height:48px;border-radius:12px;
+    background:linear-gradient(135deg,var(--azul-700),var(--azul-400));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:21px;flex-shrink:0;
+    box-shadow:0 4px 10px rgba(15,63,110,0.25);
+  }
+  .sh-text{flex:1;min-width:0;}
+  .sh-tag{font-size:11px;font-weight:700;letter-spacing:.6px;color:var(--azul-400);text-transform:uppercase;}
+  .sh-text h2{margin:2px 0 3px;font-size:18.5px;color:var(--azul-900);}
+  .sh-text p{margin:0;font-size:13px;color:var(--cinza-400);}
+  .sh-chevron{
+    width:30px;height:30px;border-radius:50%;
+    background:var(--azul-100);color:var(--azul-700);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .25s;
+    flex-shrink:0;
+  }
+  .section.open .sh-chevron{transform:rotate(180deg);}
+  .section.open .section-head{border-bottom-color:var(--linha);}
+
+  .section-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .section.open .section-body{max-height:3000px;}
+  .body-pad{padding:22px 26px 28px;}
+
+  .subgrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  @media (max-width:720px){.subgrid{grid-template-columns:1fr;}}
+
+  .subcard{
+    background:var(--azul-050);
+    border:1px solid var(--linha);
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .subcard h4{
+    margin:0 0 10px;font-size:14px;color:var(--azul-700);
+    display:flex;align-items:center;gap:8px;
+  }
+  .subcard h4::before{
+    content:"";width:6px;height:6px;border-radius:50%;
+    background:var(--azul-400);flex-shrink:0;
+  }
+  .subcard ul{margin:0;padding:0;list-style:none;}
+  .subcard li{
+    font-size:13px;line-height:1.5;color:var(--cinza-700);
+    padding:5px 0 5px 16px;
+    position:relative;
+  }
+  .subcard li::before{
+    content:"▸";
+    position:absolute;left:0;top:5px;
+    color:var(--azul-400);font-size:11px;
+  }
+  mark{background:#ffe9a8;color:inherit;border-radius:3px;padding:0 2px;}
+
+  /* STI special section */
+  .sti-program{
+    background:var(--azul-900);
+    border-radius:14px;
+    padding:24px 24px 22px;
+    color:#fff;
+    margin-bottom:20px;
+  }
+  .sti-program h3{
+    margin:0 0 16px;font-size:13px;text-transform:uppercase;
+    letter-spacing:.8px;color:#9ec3e8;font-weight:700;
+  }
+  .sti-steps{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  }
+  @media (max-width:900px){.sti-steps{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.sti-steps{grid-template-columns:1fr;}}
+  .sti-step{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:10px;
+    padding:14px 14px 12px;
+  }
+  .sti-step .num{
+    display:inline-flex;width:22px;height:22px;border-radius:50%;
+    background:var(--azul-400);color:#fff;font-size:11.5px;font-weight:700;
+    align-items:center;justify-content:center;margin-bottom:8px;
+  }
+  .sti-step h5{margin:0 0 6px;font-size:13.5px;color:#fff;}
+  .sti-step ul{margin:0;padding:0;list-style:none;}
+  .sti-step li{
+    font-size:11.8px;line-height:1.45;color:#cfe1f3;
+    padding:3px 0 3px 12px;position:relative;
+  }
+  .sti-step li::before{content:"–";position:absolute;left:0;color:#7fa8d4;}
+
+  .sti-services{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  }
+  @media (max-width:720px){.sti-services{grid-template-columns:1fr;}}
+  .svc-card{
+    background:var(--azul-050);
+    border:1px solid var(--linha);
+    border-radius:12px;
+    padding:14px 16px;
+    display:flex;gap:12px;
+  }
+  .svc-icon{
+    width:34px;height:34px;border-radius:8px;flex-shrink:0;
+    background:var(--azul-100);color:var(--azul-700);
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .svc-card h5{margin:0 0 4px;font-size:13.5px;color:var(--azul-900);}
+  .svc-card p{margin:0;font-size:12px;line-height:1.4;color:var(--cinza-700);}
+  .svc-badge{
+    display:inline-block;font-size:9.5px;font-weight:700;
+    background:var(--azul-400);color:#fff;padding:2px 7px;
+    border-radius:5px;margin-bottom:4px;letter-spacing:.3px;
+  }
+
+  /* transversal */
+  .transversal-note{
+    display:flex;align-items:center;gap:10px;
+    background:var(--azul-100);
+    border:1px dashed var(--azul-400);
+    border-radius:10px;
+    padding:12px 16px;margin-bottom:18px;
+    font-size:12.5px;color:var(--azul-700);font-weight:600;
+  }
+
+  footer{
+    text-align:center;padding:30px 20px 40px;
+    font-size:12px;color:var(--cinza-400);
+  }
+  .no-results{
+    text-align:center;padding:60px 20px;color:var(--cinza-400);
+    display:none;
+  }
+  .hidden-by-search{display:none !important;}
+
+  @media (max-width:600px){
+    header{padding:22px 18px;}
+    main{padding:22px 16px 50px;}
+    .toolbar-inner{padding:12px 16px;}
+    .section-head{padding:18px 18px;}
+    .body-pad{padding:18px 18px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SENAI</div>
+      <div class="brand-text">
+        <h1>Áreas de Atuação</h1>
+        <p>Guia institucional das áreas técnicas e tecnológicas · Escola SENAI Itumbiara</p>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="pill">9 áreas técnicas</span>
+      <span class="pill">Uso interno &amp; apresentação a clientes</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Buscar competência, tecnologia ou serviço (ex: CLP, Lean, LGPD, soldagem)...">
+    </div>
+    <div class="nav-pills" id="navPills"></div>
+  </div>
+</div>
+
+<main>
+
+  <div class="intro">
+    <div class="intro-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div>
+      <h2>Como usar esta página</h2>
+      <p>Clique em qualquer card abaixo para abrir a área correspondente, ou use a busca para localizar uma competência específica em todas as áreas. Este guia serve para onboarding de novos colaboradores, consulta rápida da equipe e apresentação do portfólio técnico a clientes.</p>
+    </div>
+  </div>
+
+  <div class="overview-grid" id="overviewGrid"></div>
+
+  <div id="sectionsContainer"></div>
+
+  <div class="no-results" id="noResults">Nenhum resultado encontrado para sua busca.</div>
+
+</main>
+
+<footer>
+  SENAI Itumbiara · Serviço de Tecnologia e Inovação (STI) — Sistema FIEG · Documento de uso interno
+</footer>
+
+<script>
+const DATA = [
+  {
+    id:"metal", num:1, icon:"🔧",
+    nome:"Metalmecânica",
+    desc:"Fabricação, usinagem e manutenção de sistemas mecânicos industriais.",
+    grupos:[
+      {titulo:"Fabricação Mecânica", itens:["Soldagem (Eletrodo, MIG/MAG, TIG, Tubulações)","Caldeiraria (Traçagem, Conformação, Montagem)","Tratamento Térmico"]},
+      {titulo:"Usinagem", itens:["Convencional (Torno, Fresadora, Furadeira, Retífica)","CNC (Torno/Centro de Usinagem, CAD/CAM)"]},
+      {titulo:"Manutenção Mecânica", itens:["Ajustagem e Montagem","Máquinas Industriais (Bombas, Compressores)","Manutenção Avançada (Vibração, Termografia)"]},
+      {titulo:"Outras Frentes", itens:["Sistemas Hidropneumáticos","Mecânica Aplicada (Resistência dos Materiais)"]}
+    ]
+  },
+  {
+    id:"eletro", num:2, icon:"⚡",
+    nome:"Eletroeletrônica",
+    desc:"Instalações, máquinas elétricas e automação para a indústria 4.0.",
+    grupos:[
+      {titulo:"Eletrotécnica", itens:["Instalações Elétricas (Resid./Comerc./Industriais)","Eletricidade Industrial","Sistemas Elétricos de Potência","Máquinas Elétricas"]},
+      {titulo:"Automação Industrial", itens:["Controladores (CLP, IHM, SCADA)","Instrumentação (Pressão, Vazão, Nível, Temp.)","Controle de Processos (PID, Malhas)"]},
+      {titulo:"Integração & Redes", itens:["MES / ERP Industrial / Indústria 4.0","Redes Industriais (Modbus, Profibus, Ethernet/IP)"]},
+      {titulo:"Tecnologias Emergentes", itens:["Robótica Industrial e Células Automatizadas","IoT Industrial, Domótica, Sistemas Embarcados"]}
+    ]
+  },
+  {
+    id:"quimica", num:3, icon:"🧪",
+    nome:"Química",
+    desc:"Laboratório, processos industriais e meio ambiente.",
+    grupos:[
+      {titulo:"Laboratório Químico", itens:["Química Analítica","Controle de Qualidade (Matérias-primas e Produto)"]},
+      {titulo:"Microbiologia", itens:["Análises de Água","Alimentos e Ambientes"]},
+      {titulo:"Alimentos & Açúcar/Álcool", itens:["Processamento e Conservação de Alimentos","Produção de Açúcar, Etanol e Fermentação","Boas Práticas de Fabricação (BPF)","Análise de Perigos e Pontos Críticos de Controle (APPCC)"]},
+      {titulo:"Processos & Meio Ambiente", itens:["Operações Unitárias","Tratamento de Água e Efluentes, Gestão Ambiental"]}
+    ]
+  },
+  {
+    id:"auto", num:4, icon:"🚗",
+    nome:"Automotiva",
+    desc:"Veículos leves, pesados, máquinas agrícolas e novas tecnologias.",
+    grupos:[
+      {titulo:"Veículos Leves", itens:["Mecânica Geral, Injeção Eletrônica","Freios, Suspensão, Direção"]},
+      {titulo:"Veículos Pesados", itens:["Caminhões, Ônibus","Sistemas Pneumáticos"]},
+      {titulo:"Máquinas Agrícolas", itens:["Tratores, Colheitadeiras, Pulverizadores"]},
+      {titulo:"Sistemas & Novas Tecnologias", itens:["Motores, Transmissão, Diagnóstico Eletrônico","Veículos Híbridos e Elétricos"]}
+    ]
+  },
+  {
+    id:"gestao", num:5, icon:"📊",
+    nome:"Gestão",
+    desc:"Administração, produção, qualidade e finanças para a indústria.",
+    grupos:[
+      {titulo:"Administração & Logística", itens:["Planejamento, Organização, Gestão Empresarial","Armazenagem, Transporte, Supply Chain"]},
+      {titulo:"Produção & Qualidade", itens:["PCP, Lean Manufacturing, Melhoria Contínua","Ferramentas da Qualidade, Auditorias, ISO 9001"]},
+      {titulo:"Pessoas & Finanças", itens:["Liderança e Gestão de Pessoas","Custos, Indicadores, Formação de Preços"]}
+    ]
+  },
+  {
+    id:"ti", num:6, icon:"💻",
+    nome:"Tecnologia da Informação",
+    desc:"Desenvolvimento, infraestrutura, segurança e dados/IA.",
+    grupos:[
+      {titulo:"Informática & Desenvolvimento", itens:["Sistemas Operacionais, Ferramentas de Escritório","Front-end, Back-end, Full Stack, Mobile"]},
+      {titulo:"Infraestrutura & Segurança", itens:["Redes, Servidores, Cloud Computing","Cibersegurança, LGPD, Governança"]},
+      {titulo:"Dados & IA", itens:["Business Intelligence, Ciência de Dados","Machine Learning, IA Generativa, IoT"]}
+    ]
+  },
+  {
+    id:"civil", num:7, icon:"🏗️",
+    nome:"Construção Civil",
+    desc:"Funções de obra, instalações, gestão e projetos técnicos.",
+    grupos:[
+      {titulo:"Funções de Obra", itens:["Pedreiro de Alvenaria, Revestimento Cerâmico","Pintor de Obras, Encanador Instalador"]},
+      {titulo:"Instalações & Gestão de Obras", itens:["Hidráulicas, Sanitárias, Elétricas Prediais","Mestre / Encarregado de Obras, Planejamento"]},
+      {titulo:"Projetos", itens:["Desenho Técnico, Interpretação de Projetos","AutoCAD, BIM"]}
+    ]
+  },
+  {
+    id:"seg", num:8, icon:"🛡️",
+    nome:"Segurança do Trabalho",
+    desc:"Formação técnica e normas regulamentadoras para ambientes seguros.",
+    grupos:[
+      {titulo:"Formação Técnica", itens:["Técnico em Segurança do Trabalho"]},
+      {titulo:"Normas Regulamentadoras", itens:["NR-10 (Segurança em Eletricidade)","NR-12 (Máquinas e Equipamentos)"]},
+      {titulo:"Higiene Ocupacional", itens:["Agentes Físicos, Químicos e Biológicos"]},
+      {titulo:"Primeiros Socorros", itens:["Atendimento emergencial básico"]}
+    ]
+  },
+  {
+    id:"transv", num:"T", icon:"🗂️",
+    nome:"Transversais Industriais",
+    desc:"Competências que atravessam todas as áreas técnicas da Escola.",
+    isTransversal:true,
+    grupos:[
+      {titulo:"Projetos & Metrologia", itens:["Desenho Técnico, CAD, Modelagem 3D, BIM","Metrologia Dimensional"]},
+      {titulo:"Qualidade & Gestão", itens:["PDCA, MASP, Ishikawa, ISO 9001/14001/45001","Lean Manufacturing (5S, Kaizen, TPM, SMED)"]},
+      {titulo:"Indústria 4.0 & Sustentabilidade", itens:["IoT, Big Data, Gêmeo Digital","Eficiência Energética, ESG"]},
+      {titulo:"Habilidades Complementares", itens:["Gestão de Projetos, Metodologias Ágeis","Soft Skills, Excel Avançado, Power BI, IA Generativa"]}
+    ]
+  },
+  {
+    id:"sti", num:9, icon:"🏭",
+    nome:"Serviços de Tecnologia e Inovação",
+    desc:"Programa SENAI de Excelência Operacional Industrial e portfólio completo de consultoria.",
+    isSTI:true
+  }
+];
+
+const stiSteps = [
+  {n:1,fase:"Diagnóstico",titulo:"Diagnóstico e Sensibilização",itens:["Mapeamento de Competências Técnicas","Identificação de Gargalos Operacionais","Índice de Maturidade Operacional (IMO)","Plano de Ação Priorizado"]},
+  {n:2,fase:"Estabilização",titulo:"Estabilização de Processos",itens:["Capacitação técnica in loco (Matriz MCT)","Desenvolvimento assistido na produção","Implantação de indicadores de performance","Nivelamento de equipes operacionais"]},
+  {n:3,fase:"Otimização",titulo:"Otimização de Performance",itens:["Intervenção técnica integrada nos processos","Redução de perdas, refugo e retrabalho","Otimização de setup e fluxo produtivo","Indicadores comparativos Antes/Depois"]},
+  {n:4,fase:"Sustentabilidade",titulo:"Sustentabilidade e Melhoria Contínua",itens:["Residência Técnica Industrial","Formação de Multiplicadores Internos","Cultura de Melhoria Contínua","Relatório de Impacto Industrial (RII)"]}
+];
+
+const stiServices = [
+  {icon:"⚙️",badge:null,titulo:"Consultoria Lean Manufacturing",desc:"Eliminação de desperdícios, VSM, Kaizen e SMED com ganhos mensuráveis de eficiência produtiva."},
+  {icon:"📋",badge:null,titulo:"Adequação & Implantação de 5S",desc:"Auditoria, implantação e programas de excelência com cultura de organização sustentável."},
+  {icon:"🤝",badge:"PARCERIA SENAI GO + SEBRAE",titulo:"Selo Alimento Confiável",desc:"Certificação de segurança alimentar para agroindústrias com +85% de conformidade em BPF."},
+  {icon:"💡",badge:"SUBSÍDIO DE ATÉ 70%",titulo:"Serviços SEBRAETEC",desc:"Consultorias subsidiadas para MPEs em design, produtividade, sustentabilidade e inovação."},
+  {icon:"📈",badge:null,titulo:"Avaliações Técnicas e Diagnósticos",desc:"Diagnóstico de maturidade digital, assessment de competência e Índice IMO personalizado."},
+  {icon:"🔬",badge:null,titulo:"Inovação: Prototipagem e PD&I",desc:"Desenvolvimento de projetos de P&D, prototipagem de produtos e acesso a laboratórios especializados."},
+  {icon:"🏢",badge:null,titulo:"Locação de Espaços e Laboratórios",desc:"Salas, auditórios, laboratórios técnicos e equipamentos industriais disponíveis para locação."}
+];
+
+const overviewGrid = document.getElementById('overviewGrid');
+const sectionsContainer = document.getElementById('sectionsContainer');
+const navPills = document.getElementById('navPills');
+
+DATA.forEach(area=>{
+  // overview card
+  const oc = document.createElement('div');
+  oc.className='overview-card';
+  oc.onclick=()=>{ openAndScroll(area.id); };
+  oc.innerHTML=`
+    <div class="oc-top">
+      <div class="oc-icon">${area.icon}</div>
+      <div class="oc-num">${area.isTransversal ? 'TRANSV.' : 'ÁREA ' + area.num + '/9'}</div>
+    </div>
+    <h3>${area.nome}</h3>
+    <p>${area.desc}</p>
+  `;
+  overviewGrid.appendChild(oc);
+
+  // nav pill
+  const pill = document.createElement('button');
+  pill.className='nav-pill';
+  pill.textContent = area.isTransversal ? 'Transversais' : area.nome;
+  pill.onclick=()=>openAndScroll(area.id);
+  navPills.appendChild(pill);
+
+  // section
+  const sec = document.createElement('div');
+  sec.className='section';
+  sec.id='sec-'+area.id;
+
+  let bodyHTML = '';
+  if(area.isSTI){
+    bodyHTML += `<div class="sti-program">
+      <h3>Programa SENAI de Excelência Operacional Industrial</h3>
+      <div class="sti-steps">
+        ${stiSteps.map(s=>`
+          <div class="sti-step">
+            <span class="num">${s.n}</span>
+            <h5>${s.titulo}</h5>
+            <ul>${s.itens.map(i=>`<li>${i}</li>`).join('')}</ul>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+    <h4 style="margin:22px 0 14px;color:var(--azul-900);font-size:14px;text-transform:uppercase;letter-spacing:.5px;">Portfólio completo · Mais serviços e parcerias</h4>
+    <div class="sti-services">
+      ${stiServices.map(s=>`
+        <div class="svc-card">
+          <div class="svc-icon">${s.icon}</div>
+          <div>
+            ${s.badge ? `<span class="svc-badge">${s.badge}</span><br>`:''}
+            <h5>${s.titulo}</h5>
+            <p>${s.desc}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>`;
+  } else {
+    if(area.isTransversal){
+      bodyHTML += `<div class="transversal-note">⚡ Estas competências aparecem em conjunto com diversas áreas técnicas e reforçam o portfólio integrado da Escola.</div>`;
+    }
+    bodyHTML += `<div class="subgrid">
+      ${area.grupos.map(g=>`
+        <div class="subcard">
+          <h4>${g.titulo}</h4>
+          <ul>${g.itens.map(i=>`<li>${i}</li>`).join('')}</ul>
+        </div>
+      `).join('')}
+    </div>`;
+  }
+
+  sec.innerHTML = `
+    <div class="section-head" onclick="toggleSection('${area.id}')">
+      <div class="sh-icon">${area.icon}</div>
+      <div class="sh-text">
+        <div class="sh-tag">${area.isTransversal ? 'Competências Transversais' : 'Área ' + area.num + ' de 9'}</div>
+        <h2>${area.nome}</h2>
+        <p>${area.desc}</p>
+      </div>
+      <div class="sh-chevron">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="section-body"><div class="body-pad">${bodyHTML}</div></div>
+  `;
+  sectionsContainer.appendChild(sec);
+});
+
+function toggleSection(id, forceOpen){
+  const sec = document.getElementById('sec-'+id);
+  if(forceOpen){ sec.classList.add('open'); return; }
+  sec.classList.toggle('open');
+}
+function openAndScroll(id){
+  const sec = document.getElementById('sec-'+id);
+  toggleSection(id, true);
+  setTimeout(()=> sec.scrollIntoView({behavior:'smooth', block:'start'}), 50);
+}
+
+// ===== SEARCH =====
+const searchInput = document.getElementById('searchInput');
+const noResults = document.getElementById('noResults');
+
+searchInput.addEventListener('input', ()=>{
+  const q = searchInput.value.trim().toLowerCase();
+  let anyVisible = false;
+
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(q===''){
+      sec.classList.remove('hidden-by-search');
+      sec.classList.remove('open');
+      sec.querySelectorAll('mark').forEach(m=>{
+        m.outerHTML = m.innerHTML;
+      });
+      anyVisible = true;
+      return;
+    }
+    let sectionMatches = false;
+    const subcards = sec.querySelectorAll('.subcard, .sti-step, .svc-card');
+    subcards.forEach(card=>{
+      const text = card.textContent.toLowerCase();
+      const matches = text.includes(q);
+      if(matches) sectionMatches = true;
+    });
+    // also match section title itself
+    const titleText = sec.querySelector('.sh-text').textContent.toLowerCase();
+    if(titleText.includes(q)) sectionMatches = true;
+
+    if(sectionMatches){
+      sec.classList.remove('hidden-by-search');
+      sec.classList.add('open');
+      anyVisible = true;
+    } else {
+      sec.classList.add('hidden-by-search');
+      sec.classList.remove('open');
+    }
+  });
+
+  noResults.style.display = anyVisible ? 'none' : 'block';
+});
+</script>
+
+</body>
+</html>
